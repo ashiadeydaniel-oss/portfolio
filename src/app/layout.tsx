@@ -3,6 +3,9 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/data/site";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -32,7 +35,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {children}
+        <Navbar />
+        <div className="flex flex-1 flex-col">{children}</div>
+        <Footer />
+        <WhatsAppButton />
         <Analytics />
       </body>
     </html>
