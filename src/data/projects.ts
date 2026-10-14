@@ -45,8 +45,13 @@ export const projects: Project[] = [
     ],
     result:
       "Backend and mobile app built and demoed end to end, across 39 Django apps. Currently preparing for launch in Ghana.",
-    images: [],
-    imageFormat: "portrait",
+    images: [
+      "/images/cosign/cosign-escrow-flow.jpg",
+      "/images/cosign/cosign-architecture.jpg",
+      "/images/cosign/cosign-features.jpg",
+      "/images/cosign/cosign-seller-journey.jpg",
+    ],
+    imageFormat: "landscape",
     featured: true,
   },
   {
