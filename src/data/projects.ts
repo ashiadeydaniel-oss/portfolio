@@ -67,7 +67,12 @@ export const projects: Project[] = [
     ],
     result:
       "A concept build showing the kind of store I deliver in the Online Store package.",
-    images: [],
+    images: [
+      "/images/projects/thrift-and-co-home.jpg",
+      "/images/projects/thrift-and-co-shop.jpg",
+      "/images/projects/thrift-and-co-product.jpg",
+      "/images/projects/thrift-and-co-cart.jpg",
+    ],
     featured: true,
   },
   {
@@ -88,7 +93,12 @@ export const projects: Project[] = [
     ],
     result:
       "A concept build showing the kind of site I deliver in the Business Website package.",
-    images: [],
+    images: [
+      "/images/projects/savour-kitchen-home.jpg",
+      "/images/projects/savour-kitchen-menu.jpg",
+      "/images/projects/savour-kitchen-booking.jpg",
+      "/images/projects/savour-kitchen-visit.jpg",
+    ],
     featured: true,
   },
 ];
