@@ -67,3 +67,32 @@ export function Textarea({ label, id, error, className, ...props }: TextareaProp
     </FieldWrapper>
   );
 }
+
+type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
+  label: string;
+  id: string;
+  error?: string;
+};
+
+export function Select({
+  label,
+  id,
+  error,
+  className,
+  children,
+  ...props
+}: SelectProps) {
+  return (
+    <FieldWrapper label={label} id={id} error={error}>
+      <select
+        id={id}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${id}-error` : undefined}
+        className={cn(fieldBase, "h-11", error && "border-red-400", className)}
+        {...props}
+      >
+        {children}
+      </select>
+    </FieldWrapper>
+  );
+}

@@ -1,4 +1,10 @@
-import type { Project } from "@/types";
+import type { Project, ProjectStatus } from "@/types";
+
+export const statusLabel: Record<ProjectStatus, string> = {
+  live: "Live",
+  "in-development": "In development",
+  concept: "Concept",
+};
 
 // To add a project: add one object below. Its case study page is generated
 // automatically from the slug. Put screenshots in /public/images/<folder>/
@@ -40,6 +46,7 @@ export const projects: Project[] = [
     result:
       "Backend and mobile app built and demoed end to end, across 39 Django apps. Currently preparing for launch in Ghana.",
     images: [],
+    imageFormat: "portrait",
     featured: true,
   },
   {

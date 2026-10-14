@@ -1,14 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import type { Project, ProjectStatus } from "@/types";
+import type { Project } from "@/types";
+import { statusLabel } from "@/data/projects";
 import { Badge } from "@/components/ui/Badge";
-
-const statusLabel: Record<ProjectStatus, string> = {
-  live: "Live",
-  "in-development": "In development",
-  concept: "Concept",
-};
 
 export function ProjectCard({ project }: { project: Project }) {
   const cover = project.images[0];
@@ -25,7 +20,7 @@ export function ProjectCard({ project }: { project: Project }) {
             alt={`${project.title} screenshot`}
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           <div

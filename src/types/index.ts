@@ -19,6 +19,8 @@ export type Project = {
   result: string;
   /** Paths inside /public, e.g. "/images/cosign/home.png" */
   images: string[];
+  /** "portrait" for phone screenshots, "landscape" for website screenshots. Default: landscape */
+  imageFormat?: "portrait" | "landscape";
   liveUrl?: string;
   featured: boolean;
 };

@@ -86,3 +86,38 @@ export const process: ProcessStep[] = [
       "After the final payment, your site goes live. I stay available for support and updates.",
   },
 ];
+
+export type FaqItem = { question: string; answer: string };
+
+export const faqs: FaqItem[] = [
+  {
+    question: "How does payment work?",
+    answer:
+      "I take a 50% deposit to start and the remaining 50% before the site goes live. Clients in Ghana can pay in cedis by Mobile Money or bank transfer. International clients are invoiced in USD.",
+  },
+  {
+    question: "Do I have to pay for hosting and a domain?",
+    answer:
+      "Yes, these are separate from the build price and paid by you, so you own them. I'll recommend the most affordable option for your needs and set everything up for you.",
+  },
+  {
+    question: "How many revisions are included?",
+    answer:
+      "Each package lists its included revision rounds. Anything outside the agreed scope is quoted separately before I start it.",
+  },
+  {
+    question: "Who owns the website?",
+    answer:
+      "You do. Once the final payment is made, the site, its code and its content are yours.",
+  },
+  {
+    question: "How long will it take?",
+    answer:
+      "Each package lists a typical timeline. The biggest factor is how quickly I get your content (text, logo, photos), so the sooner you send it, the sooner you launch.",
+  },
+  {
+    question: "Can you update the site after launch?",
+    answer:
+      "Yes. You can add the Monthly Care Plan for ongoing updates, or ask for one-off changes whenever you need them.",
+  },
+];

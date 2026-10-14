@@ -6,18 +6,20 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-export function Services() {
+export function Services({ showHeading = true }: { showHeading?: boolean }) {
   return (
     <section id="services" className="scroll-mt-20 py-20">
       <Container>
-        <SectionHeading
-          align="center"
-          eyebrow="Services"
-          title="Clear packages, fair prices"
-          description="Fixed scope and price, agreed before we start. No surprises."
-        />
+        {showHeading && (
+          <SectionHeading
+            align="center"
+            eyebrow="Services"
+            title="Clear packages, fair prices"
+            description="Fixed scope and price, agreed before we start. No surprises."
+          />
+        )}
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className={cn("grid gap-6 lg:grid-cols-3", showHeading && "mt-12")}>
           {services.map((service) => (
             <div
               key={service.name}
