@@ -3,7 +3,7 @@ export const site = {
   title: "Full-Stack Web Developer",
   tagline:
     "I build fast, professional websites and online stores for businesses in Ghana and beyond.",
-  url: "https://portfolio-topaz-three-99.vercel.app",
+  url: "https://daniel.sevora.tech",
   email: "ashiadeydaniel@gmail.com",
   whatsapp: "233537876821",
   github: "https://github.com/ashiadeydaniel-oss",
