@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { site, whatsappLink } from "@/data/site";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -8,7 +9,7 @@ import { StackMarquee } from "@/components/sections/StackMarquee";
 
 const points = [
   "Mobile-first and fast",
-  "Paystack and WhatsApp ordering",
+  "Online stores with secure checkout",
   "Built in Accra, for Ghana and beyond",
 ];
 
@@ -39,21 +40,26 @@ export function Hero() {
 
         <h1 className="mx-auto mt-6 max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-6xl">
           {plainWords.map((word, i) => (
-            <span key={word} className="word-mask">
-              <span className="word" style={{ animationDelay: wordDelay(i) }}>
-                {word}
+            <Fragment key={word}>
+              <span className="word-mask">
+                <span className="word" style={{ animationDelay: wordDelay(i) }}>
+                  {word}
+                </span>
               </span>{" "}
-            </span>
+            </Fragment>
           ))}
           {accentWords.map((word, i) => (
-            <span key={word} className="word-mask">
-              <span
-                className="word text-gradient"
-                style={{ animationDelay: wordDelay(plainWords.length + i) }}
-              >
-                {word}
-              </span>{" "}
-            </span>
+            <Fragment key={word}>
+              <span className="word-mask">
+                <span
+                  className="word text-gradient"
+                  style={{ animationDelay: wordDelay(plainWords.length + i) }}
+                >
+                  {word}
+                </span>
+              </span>
+              {i < accentWords.length - 1 && " "}
+            </Fragment>
           ))}
         </h1>
 
