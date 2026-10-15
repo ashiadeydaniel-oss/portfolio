@@ -15,15 +15,18 @@ export function FeaturedWork() {
             title="Real projects, built end to end"
             description="From a full multi-vendor marketplace to sites for local businesses."
           />
-          <Button href="/projects" variant="ghost" className="self-start sm:self-auto">
+          <Button href="/projects" variant="ghost" className="group self-start sm:self-auto">
             All projects
-            <ArrowRight size={16} />
+            <ArrowRight
+              size={16}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
           </Button>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+          {featuredProjects.map((project, index) => (
+            <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
       </Container>

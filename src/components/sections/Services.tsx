@@ -4,7 +4,9 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Spotlight } from "@/components/ui/Spotlight";
 
 export function Services({ showHeading = true }: { showHeading?: boolean }) {
   return (
@@ -19,65 +21,60 @@ export function Services({ showHeading = true }: { showHeading?: boolean }) {
           />
         )}
 
-        <div className={cn("grid gap-6 lg:grid-cols-3", showHeading && "mt-12")}>
+        <Stagger className={cn("grid gap-6 lg:grid-cols-3", showHeading && "mt-12")}>
           {services.map((service) => (
-            <div
-              key={service.name}
-              className={cn(
-                "flex flex-col rounded-2xl border bg-surface p-6 sm:p-8",
-                service.highlighted
-                  ? "border-accent/50 shadow-[0_0_0_1px_rgba(34,197,94,0.15)]"
-                  : "border-border",
-              )}
-            >
-              <div className="flex items-center justify-between gap-2">
-                <h3 className="text-lg font-semibold tracking-tight">
-                  {service.name}
-                </h3>
-                {service.priceNote && (
-                  <Badge tone="accent">{service.priceNote}</Badge>
+            <StaggerItem key={service.name} className="h-full">
+              <Spotlight
+                className={cn(
+                  "flex h-full flex-col rounded-2xl border bg-surface p-6 transition-[transform,border-color] duration-300 hover:-translate-y-1 sm:p-8",
+                  service.highlighted
+                    ? "beam border-accent/40 shadow-[0_0_60px_-20px_rgba(34,197,94,0.35)]"
+                    : "border-border hover:border-muted/40",
                 )}
-              </div>
-
-              <p className="mt-4 text-3xl font-semibold tracking-tight">
-                {service.price}
-              </p>
-              <p className="mt-1 font-mono text-xs text-muted">
-                {service.timeline}
-              </p>
-
-              <p className="mt-5 text-sm text-muted">{service.description}</p>
-
-              <ul className="mt-6 flex-1 space-y-3 text-sm">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex gap-3">
-                    <Check
-                      size={16}
-                      className="mt-0.5 shrink-0 text-accent"
-                      aria-hidden="true"
-                    />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button
-                href={`/contact?package=${encodeURIComponent(service.name)}`}
-                variant={service.highlighted ? "primary" : "secondary"}
-                className="mt-8"
               >
-                Get started
-              </Button>
-            </div>
-          ))}
-        </div>
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-lg font-semibold tracking-tight">{service.name}</h3>
+                  {service.priceNote && <Badge tone="accent">{service.priceNote}</Badge>}
+                </div>
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted">
-          <span className="font-medium text-foreground">
-            {maintenance.title}, {maintenance.price}.
-          </span>{" "}
-          {maintenance.description}
-        </p>
+                <p className="mt-4 text-3xl font-semibold tracking-tight">{service.price}</p>
+                <p className="mt-1 font-mono text-xs text-muted">{service.timeline}</p>
+
+                <p className="mt-5 text-sm text-muted">{service.description}</p>
+
+                <ul className="mt-6 flex-1 space-y-3 text-sm">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex gap-3">
+                      <Check
+                        size={16}
+                        className="mt-0.5 shrink-0 text-accent"
+                        aria-hidden="true"
+                      />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  href={`/contact?package=${encodeURIComponent(service.name)}`}
+                  variant={service.highlighted ? "primary" : "secondary"}
+                  className="mt-8"
+                >
+                  Get started
+                </Button>
+              </Spotlight>
+            </StaggerItem>
+          ))}
+        </Stagger>
+
+        <Reveal delay={0.1}>
+          <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted">
+            <span className="font-medium text-foreground">
+              {maintenance.title}, {maintenance.price}.
+            </span>{" "}
+            {maintenance.description}
+          </p>
+        </Reveal>
       </Container>
     </section>
   );

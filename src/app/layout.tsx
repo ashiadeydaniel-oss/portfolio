@@ -6,6 +6,8 @@ import { site } from "@/data/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { MotionProvider } from "@/components/layout/MotionProvider";
+import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -55,12 +57,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
-        <Navbar />
-        <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
-          {children}
-        </div>
-        <Footer />
-        <WhatsAppButton />
+        <MotionProvider>
+          <ScrollProgress />
+          <Navbar />
+          <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
+            {children}
+          </div>
+          <Footer />
+          <WhatsAppButton />
+        </MotionProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

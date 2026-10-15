@@ -1,4 +1,8 @@
+"use client";
+
+import { m } from "motion/react";
 import { cn } from "@/lib/utils";
+import { fadeUp, staggerContainer, viewportOnce } from "@/components/ui/Reveal";
 
 type SectionHeadingProps = {
   eyebrow?: string;
@@ -16,22 +20,36 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div
-      className={cn(
-        "max-w-2xl",
-        align === "center" && "mx-auto text-center",
-        className,
-      )}
+    <m.div
+      variants={staggerContainer(0.1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewportOnce}
+      className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}
     >
       {eyebrow && (
-        <p className="font-mono text-sm text-accent">{eyebrow}</p>
+        <m.p
+          variants={fadeUp}
+          className={cn(
+            "flex items-center gap-3 font-mono text-sm text-accent",
+            align === "center" && "justify-center",
+          )}
+        >
+          <span aria-hidden="true" className="h-px w-8 bg-accent/60" />
+          {eyebrow}
+        </m.p>
       )}
-      <h2 className="mt-2 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+      <m.h2
+        variants={fadeUp}
+        className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl"
+      >
         {title}
-      </h2>
+      </m.h2>
       {description && (
-        <p className="mt-4 text-pretty text-muted">{description}</p>
+        <m.p variants={fadeUp} className="mt-4 text-pretty text-muted">
+          {description}
+        </m.p>
       )}
-    </div>
+    </m.div>
   );
 }

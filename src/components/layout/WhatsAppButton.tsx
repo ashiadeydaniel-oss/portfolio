@@ -8,9 +8,16 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-background shadow-lg shadow-black/40 transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+      className="pop-in group fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-background shadow-lg shadow-black/40 transition-transform duration-300 hover:scale-110 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
     >
-      <MessageCircle size={26} />
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 animate-ping rounded-full bg-accent/40 [animation-duration:2.5s] motion-reduce:hidden"
+      />
+      <MessageCircle
+        size={26}
+        className="transition-transform duration-300 group-hover:-rotate-12"
+      />
     </a>
   );
 }

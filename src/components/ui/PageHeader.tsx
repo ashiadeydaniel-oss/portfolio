@@ -6,20 +6,34 @@ type PageHeaderProps = {
   description?: string;
 };
 
+const delay = (seconds: number) => ({ "--d": `${seconds}s` }) as React.CSSProperties;
+
 export function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
   return (
     <section className="relative overflow-hidden border-b border-border">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_80%_at_50%_0%,rgba(34,197,94,0.08),transparent)]"
-      />
+      <div aria-hidden="true" className="hero-grid pointer-events-none absolute inset-0" />
+      <div aria-hidden="true" className="hero-orb hero-orb-a pointer-events-none absolute" />
       <Container className="relative py-16 sm:py-20">
-        {eyebrow && <p className="font-mono text-sm text-accent">{eyebrow}</p>}
-        <h1 className="mt-2 max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
+        {eyebrow && (
+          <p
+            className="rise flex items-center gap-3 font-mono text-sm text-accent"
+            style={delay(0)}
+          >
+            <span aria-hidden="true" className="h-px w-8 bg-accent/60" />
+            {eyebrow}
+          </p>
+        )}
+        <h1
+          className="rise mt-3 max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl"
+          style={delay(0.1)}
+        >
           {title}
         </h1>
         {description && (
-          <p className="mt-4 max-w-2xl text-pretty text-lg text-muted">
+          <p
+            className="rise mt-4 max-w-2xl text-pretty text-lg text-muted"
+            style={delay(0.25)}
+          >
             {description}
           </p>
         )}
