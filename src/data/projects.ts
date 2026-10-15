@@ -106,6 +106,84 @@ export const projects: Project[] = [
     ],
     featured: true,
   },
+  {
+    slug: "luxeglow-beauty-salon",
+    title: "LuxeGlow Beauty Salon",
+    tagline: "Concept: a website for a beauty salon and spa.",
+    category: "Business",
+    status: "concept",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    problem:
+      "Many salons rely on Instagram and word of mouth, so new clients can't easily see the services, the prices or how to book an appointment.",
+    solution:
+      "A polished, mobile-first site with services and starting prices, a gallery of real results, and simple booking with a WhatsApp option for quick questions.",
+    highlights: [
+      "Services grouped by category, with starting prices",
+      "Photo gallery that shows real client results",
+      "Booking form plus one-tap WhatsApp chat",
+    ],
+    result:
+      "A concept build showing the kind of site I deliver in the Business Website package.",
+    images: [
+      "/images/projects/luxeglow-home.jpg",
+      "/images/projects/luxeglow-services.jpg",
+      "/images/projects/luxeglow-gallery.jpg",
+      "/images/projects/luxeglow-mobile.jpg",
+    ],
+    featured: true,
+  },
+  {
+    slug: "freshspace-cleaning",
+    title: "FreshSpace Cleaning",
+    tagline: "Concept: a website for a cleaning company.",
+    category: "Business",
+    status: "concept",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    problem:
+      "Cleaning companies win work on trust and fast quotes, but without a proper website customers can't see what is offered or how to ask for a price.",
+    solution:
+      "A clean, trustworthy site with clear service pages for homes and businesses, and a free quote request form that takes under a minute to fill in.",
+    highlights: [
+      "Service pages for residential, commercial, deep and specialised cleaning",
+      "Free quote form with service, date and property type",
+      "Trust signals: vetted staff, flexible scheduling and a satisfaction guarantee",
+    ],
+    result:
+      "A concept build showing the kind of site I deliver in the Business Website package.",
+    images: [
+      "/images/projects/freshspace-home.jpg",
+      "/images/projects/freshspace-services.jpg",
+      "/images/projects/freshspace-quote.jpg",
+      "/images/projects/freshspace-mobile.jpg",
+    ],
+    featured: true,
+  },
+  {
+    slug: "the-ember-restaurant",
+    title: "The Ember Restaurant",
+    tagline: "Concept: a website for a restaurant and cafe.",
+    category: "Business",
+    status: "concept",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    problem:
+      "Restaurants lose bookings when guests can't find the menu or reserve a table without making a phone call.",
+    solution:
+      "A moody, image-led site with a categorised menu and prices, an online table reservation form, and a gallery that shows off the atmosphere.",
+    highlights: [
+      "Menu with categories, prices and food photography",
+      "Table reservation form with party size and special requests",
+      "Gallery and a mobile layout built for guests on the go",
+    ],
+    result:
+      "A concept build showing the kind of site I deliver in the Business Website package.",
+    images: [
+      "/images/projects/the-ember-home.jpg",
+      "/images/projects/the-ember-menu.jpg",
+      "/images/projects/the-ember-reservations.jpg",
+      "/images/projects/the-ember-mobile.jpg",
+    ],
+    featured: true,
+  },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);
